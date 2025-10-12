@@ -31,9 +31,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with: 
+        with:
+          sparse-checkout: |
+            src/docs/*
           repository: CHIPFriends/CHIP-Home
-          path: src/docs
+          path: docs
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
